@@ -24,7 +24,7 @@ const hariini = moment.tz('Asia/Jakarta').format('dddd, DD MMMM YYYY')
 const barat = moment.tz('Asia/Jakarta').format('HH:mm:ss')
 const tengah = moment.tz('Asia/Makassar').format('HH:mm:ss')
 const timur = moment.tz('Asia/Jayapura').format('HH:mm:ss')
-const nyoutube = ('© Naze\nYoutube/Sc :\nhttps://youtube.com/c/Nazedev')  //ubah di config biar ngk emror
+const nyoutube = ('© Recode By Humanz')  //ubah di config biar ngk emror
 const ini_mark = `0@s.whatsapp.net`
 
 //TIME
@@ -119,14 +119,14 @@ module.exports = naze = async (naze, m, chatUpdate, store) => {
             if (typeof setting !== 'object') global.db.data.settings[botNumber] = {}
 	    if (setting) {
 		if (!isNumber(setting.status)) setting.status = 0
-		if (!('autobio' in setting)) setting.autobio = false
+		if (!('autobio' in setting)) setting.autobio = true
 		if (!('templateImage' in setting)) setting.templateImage = true
 		if (!('templateVideo' in setting)) setting.templateVideo = false
 		if (!('templateGif' in setting)) setting.templateGif = false
 		if (!('templateMsg' in setting)) setting.templateMsg = false	
 	    } else global.db.data.settings[botNumber] = {
 		status: 0,
-		autobio: false,
+		autobio: true,
 		templateImage: true,
 		templateVideo: false,
 		templateGif: false,
@@ -171,7 +171,7 @@ jumlahharian = `${dataa.value}`
 	    let setting = global.db.data.settings[botNumber]
 	    if (new Date() * 1 - setting.status > 1000) {
 		let uptime = await runtime(process.uptime())
-		await naze.setStatus(`${naze.user.name} | Runtime : ${runtime(uptime)}`)
+		await naze.setStatus(`${naze.user.name}  | Runtime : ${uptime} | Create By Humanz`)
 		setting.status = new Date() * 1
 	    }
 	}
@@ -576,11 +576,11 @@ Ketik *nyerah* untuk menyerah dan mengakui kekalahan`
             }
             break
 	    case 'donasi': case 'sewabot': case 'sewa': case 'buypremium': case 'donate': {
-                naze.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/74fd634010128be37972c.jpg' }, caption: `*${ucapanWaktu} Kak ${m.pushName}*\n\n *Jika ingin berdonasi silahkan scan gambar diatas*\n\n*Atau klik link dibawah ini*\n_https://saweria.co/naze_\n\n*Atau Transfer via*\n- *Gopay Dana Ovo Qris ShopeePay*\n Ke nomer berikut : 082113821188\n\n_Terima kasih bagi yang sudah donasi_` }, { quoted: m })
+                naze.sendMessage(m.chat, { image: { url: 'https://telegra.ph/file/4a276e746cfe05571c291.jpg' }, caption: `*${ucapanWaktu} Kak ${m.pushName}*\n\n *Jika ingin berdonasi silahkan scan gambar diatas*\n\n*Atau Chat Owner\n\n*Atau Transfer via*\n- *Gopay Dana Ovo Qris ShopeePay*\n Ke nomer berikut : 088804947282\n\n_Terima kasih bagi yang sudah donasi_` }, { quoted: m })
             }
             break
             case 'sc': {
-                m.reply('https://wa.me/6285822347348')
+                m.reply('Kamu Ingin Sc Dri Bot Ini? Chat wa.me/6288804947282')
             }
             break		 
             case 'chat': {
@@ -1189,7 +1189,7 @@ break
                let pjtxt = `Pesan Dari : @${me.split('@')[0]} \nUntuk : @${ownernya.split('@')[0]}\n\n${text}`
                let ments = [ownernya, me]
                let buttons = [{ buttonId: 'hehehe', buttonText: { displayText: '🙏THANKS LAPORANNYA' }, type: 1 }]
-            await naze.sendButtonText('6285875158363@s.whatsapp.net', buttons, pjtxt, nyoutube, m, {mentions: ments})
+            await naze.sendButtonText('6288804947282@s.whatsapp.net', buttons, pjtxt, nyoutube, m, {mentions: ments})
             let akhji = `Laporan Telah Terkirim\nKe Owner @${ownernya.split('@')[0]}\n*Terima Kasih Laporannya🙏*\n_Nomermu Akan Terblokir_\n_Jika Laporan Hanya Di Buat Buat_`
             await naze.sendButtonText(m.chat, buttons, akhji, nyoutube, m, {mentions: ments})
             }
@@ -1214,7 +1214,7 @@ break
                 m.reply(`Mengirim Broadcast Ke ${anu.length} Group Chat, Waktu Selesai ${anu.length * 1.5} detik`)
                 for (let i of anu) {
                     await sleep(1500)
-                    let txt = `「 *Broadcast Group* 」\n\n${text}`
+                    let txt = `「 *Sung Jinwoo Broadcast Group* 」\n\n${text}`
                     let buttons = [{ buttonId: 'simplemenu', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖List Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
             await naze.sendButtonText(m.chat, buttons, txt, nyoutube, m)
 		}}
@@ -1226,7 +1226,7 @@ break
                 m.reply(`Mengirim Broadcast Ke ${anu.length} Chat\nWaktu Selesai ${anu.length * 1.5} detik`)
 		for (let yoi of anu) {
 		    await sleep(3000)
-                      let txt = `「 *Broadcast Naze Dev* 」\n\n${text}`
+                      let txt = `「 * Sung Jinwoo Broadcast* 」\n\n${text}`
                       let buttons = [{ buttonId: 'simplemenu', buttonText: { displayText: '⬅️Back' }, type: 1 },{ buttonId: 'allmenu', buttonText: { displayText: '📖List Menu' }, type: 1 },{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 }]
             await naze.sendButtonText(m.chat, buttons, txt, nyoutube, m)
 		}}
@@ -1585,7 +1585,7 @@ break
                 let buttons = [{buttonId: `waifu`, buttonText: {displayText: 'Next Image'}, type: 1},{buttonId: `simplemenu`, buttonText: {displayText: '⬅️Back'}, type: 1}]
                 let buttonMessage = {
                     image: buffer,
-                    caption: `Random Waifu`,
+                    caption: `Create By Humanz`,
                     footer: nyoutube,
                     buttons: buttons,
                     headerType: 4
@@ -1633,7 +1633,7 @@ break
                 naze.sendMessage(m.chat, buttonMessage, { quoted: m })
             }
             break
-            case 'gcsearch': {
+            case 'groupsearch': {
                 if (!text) throw 'Masukkan Query Title'
                 anu = await fetchJson(`https://leyscoders-api.herokuapp.com/api/whatsapp-group?q=${text}&apikey=MIMINGANZ`)
                 n = anu.result
@@ -2547,7 +2547,7 @@ Lihat list Pesan Dengan ${prefix}listmsg`)
                 respon = `
 Kecepatan Respon ${latensi.toFixed(4)} _Second_ \n ${oldd - neww} _miliseconds_\n\nRuntime : ${runtime(process.uptime())}
 
-💻 Info Server
+💻 Info Server
 RAM: ${formatp(os.totalmem() - os.freemem())} / ${formatp(os.totalmem())}
 
 _NodeJS Memory Usaage_
@@ -2668,7 +2668,7 @@ let capt = `⭔ Title: ${judul}
             naze.sendImage(m.chat, thumb, capt, m)
             }
             break
-            case 'webtoons': {
+            case 'webtoon': {
             if (!text) throw `Example : ${prefix + command} love`
             let res = await fetchJson(api('zenz', '/webzone/webtoons', { query: text }, 'apikey'))
             let capt = `Webtoons Search From : ${text}\n\n`
@@ -2754,7 +2754,7 @@ let kominfo = `628119224545@s.whatsapp.net`
 let alfamart = `628111500959@s.whatsapp.net`
             let ownernya = ownernomer + '@s.whatsapp.net'
             let me = m.sender
-            let jawab = `*Bot by Naze Dev* 
+            let jawab = `*Bot by Humanz* 
 -Creator :  @${ownernya.split('@')[0]}\n-Lu : @${me.split('@')[0]}\n-Powered  : @${ini_mark.split('@')[0]}\n- :  @${qontak.split('@')[0]}\n- :  @${dana.split('@')[0]}\n- :  @${shopeeotp.split('@')[0]}\n- :  @${shopee.split('@')[0]}\n- :  @${tokopedia.split('@')[0]}\n- :  @${smartfrend.split('@')[0]}\n- :  @${getcontact.split('@')[0]}\n- :  @${facebook.split('@')[0]}\n- :  @${pasarpolis.split('@')[0]}\n- :  @${getcontact.split('@')[0]}\n- :  @${kominfo.split('@')[0]}\n- :  @${alfamart.split('@')[0]}`
             let ments = [ownernya, me, ini_mark, qontak, dana, shopeeotp, shopee, tokopedia, smartfrend, getcontact, facebook, pasarpolis, kominfo, alfamart]
             let buttons = [
@@ -2799,31 +2799,51 @@ let alfamart = `628111500959@s.whatsapp.net`
             let ownernya = ownernomer + '@s.whatsapp.net'
             let me = m.sender
             let ments = [ownernya, me, ini_mark]
-            let kukiw = `*${ucapanWaktu}*
-╭──❍「 𝙄𝙉𝙁𝙊 𝙐𝙎𝙀𝙍 」❍
-├ *Nama* : ${pushname}
-├ *Number* : ${me.split('@')[0]}
-├ *Premium* : ${isPremium ? '✅' : `❌`}
-├ *Limit* : ${isPremium ? '♾Infinity' : `〽️${db.data.users[m.sender].limit}`}
-╰──❍
-
-╭──❍「 𝙄𝙉𝙁𝙊 𝘽𝙊𝙏 」❍
-├ *Nama Bot* : ${pushname}
-├ *Mode* : ${naze.public ? 'Public' : `Self`}
-├ *Prefix* :「 MULTI-PREFIX 」
-├ *Total Hit* : ${jumlahcmd}
-├ *Total Hit Today* : ${jumlahharian}
-╰──❍
-
-╭──❍「 𝙄𝙉𝘿𝙊𝙉𝙀𝙎𝙄𝘼𝙉 𝙏𝙄𝙈𝙀 」❍
-├ *Hari Ini* : ${hariini}
-├ *Wib* : ${barat} WIB
-├ *Wita* : ${tengah} WITA
-├ *Wit* : ${timur} WIT
-╰──❍`
+            let kukiw = `
+
+
+${emot}  Hai Kak 
+  ${conn.getName(m.sender)} 
+  Bagaimana Harimu? 
+  Terima Kasih Telah Menggunakan Bot Kami
+
+
+   *U s e r  I n f o * 
+ *:* ${usrs.registered ? usrs.name : conn.getName(m.sender)}
+ *s:* @${m.sender.split`@`[0]}
+ *ss:* ${m.sender.split`@`[0] == nomorown ? 'Developer' : (usrs.premiumTime >= 1 ? 'Premium User' : 'Free User')}
+ *:* ${usrs.premiumTime > 1 ? 'Yes': 'No'}
+
+
+   *S t a t u s  I n f o * 
+ *:* ${moment.tz('Asia/Jakarta').format('HH')} H  ${moment.tz('Asia/Jakarta').format('mm')} M  ${moment.tz('Asia/Jakarta').format('ss')} S
+ *ss:* ${Object.keys(global.db.data.users).length}
+ *:* ${usrs.limit}
+ *:* ${usrs.level}
+
+
+   *I n f o   B o t * 
+ Aktif selama ${mpt}
+ Baterai ${conn.battery != undefined ? `${conn.battery.value}% ${conn.battery.live ? ' pengisian' : ''}` : 'tidak diketahui'}
+ Prefix : [ ${_p} ]
+ *${Object.keys(global.db.data.users).length}* Pengguna
+ *${Object.entries(global.db.data.chats).filter(chat => chat[1].isBanned).length}* Chat Terbanned
+ *${Object.entries(global.db.data.users).filter(user => user[1].banned).length}* Pengguna Terbanned
+
+
+ 
+
+   :
+     ^^
+
+
+${emot} *:* ${usrs.role}${usrs.premiumTime > 1 ? `
+${emot} *x :*
+${emot} ${clockStringP(usrs.premiumTime - new Date())}` : ''}
+`
                 let sections = [
                 {
-                title: "CHANGE MENU BOT",
+                title: "CLICK HERE",
                 rows: [
                 {title: "Group", rowId: `mgroup`, description: `👥Group Menu`},
                 {title: "Webzone", rowId: `mwebzone`, description: `📹Webzone Menu`},
@@ -2886,7 +2906,7 @@ wbzone = `┌──⭓ *Webzone Menu*
 │⭔ ${prefix}nowplayingbioskop
 │⭔ ${prefix}aminio
 │⭔ ${prefix}wattpad
-│⭔ ${prefix}webtoons
+│⭔ ${prefix}webtoon
 │⭔ ${prefix}drakor
 │
 └───────⭓`
@@ -3522,7 +3542,7 @@ let buttons = [{ buttonId: 'simplemenu', buttonText: { displayText: '⬅️Back'
 │⭔ ${prefix}setmenu [option]
 │
 └───────⭓
-_Donasi Ngab_\n_Jangan Ngarep Free Mulu_`
+_Create By Humanz_`
                 let buttons = [{ buttonId: 'donasi', buttonText: { displayText: '🙏Donasi' }, type: 1 },{ buttonId: 'rules', buttonText: { displayText: '❗Rules' }, type: 1 }]
             await naze.sendButtonText(m.chat, buttons, anu, nyoutube, m, {mentions: ments})
             }
